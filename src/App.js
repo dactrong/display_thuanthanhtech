@@ -9,6 +9,7 @@ import Cauhinhkhoi from './components/Cauhinhkhoi';
 import Phanphoimonhoc from './components/Phanphoimonhoc';
 import Cauhinhtruonghoc from './components/Cauhinhtruonghoc';
 import Maunhanxet from './components/Maunhanxet';
+import Demo from './components/Demo';
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
       <Cauhinhkhoi itemsPerPage={5}/>
       <Phanphoimonhoc itemsPerPage={5}/>
       <Cauhinhtruonghoc/>
-      
+
       <Maunhanxet itemsPerPage={5}/>
+      <Demo/>
     </div>
   );
 }

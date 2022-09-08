@@ -16,7 +16,17 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row, Table } from "react-bootstrap";
 import styles from "./Cauhinhhocky.module.scss";
 import ReactPaginate from "react-paginate";
-
+import Select from "react-select";
+const options = [
+  { value: '2011-2012', label: '2011-2012' },
+  { value: '2012-2013', label: '2012-2013' },
+  { value: '2013-2014', label: '2013-2014' }
+]
+const options1 = [
+  { value: '2011-2012', label: 'Tiểu học' },
+  { value: '2012-2013', label: 'Trung học cơ sở' },
+  { value: '2013-2014', label: 'Trung học phổ thông' }
+]
 const items = [
   {
     ma: "2026",
@@ -169,7 +179,7 @@ function Items({ currentItems }) {
   );
 }
 
-const Phanphoimonhoc = ({ itemsPerPage = 5 }) => {
+const Phanphoimonhoc = ({ itemsPerPage = null }) => {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
@@ -232,22 +242,12 @@ const Phanphoimonhoc = ({ itemsPerPage = 5 }) => {
             </Col>
             <Col xs={1}>
               <div className={`${styles.trong}`}>
-                <select name="" id="" className={`${styles.kieu}`}>
-                  <option value="">2010-2011</option>
-                  <option value="">2012-2013</option>
-                  <option value="">2014-2015</option>
-                  <option value="">2-16-2-17</option>
-                </select>
+              <Select options={options} className={`${styles.kieu}`} placeholder="Chọn năm học"/>
+
               </div>
             </Col>
             <Col>
-              <span>Khối:</span>
-              <select className={`${styles.khoi}`}>
-                <option lassName={`${styles.option}`}>Tất cả</option>
-                <option>Khối 1</option>
-                <option>Khối 2</option>
-                <option>Khối 3</option>
-              </select>
+              <Select options={options1} className={`${styles.khoi}`} placeholder="Chọn Khối"/>
             </Col>
             <Col>
               <div className={`${styles.check}`}>
@@ -282,7 +282,7 @@ const Phanphoimonhoc = ({ itemsPerPage = 5 }) => {
             <Row>
               <Col>
                 <p>
-                  Hiển thị <strong>{itemOffset}</strong> - <strong></strong> bản
+                  Hiển thị <strong>{`${itemOffset}`}</strong> - <strong>/{}</strong> bản
                   ghi
                 </p>
               </Col>
@@ -300,7 +300,7 @@ const Phanphoimonhoc = ({ itemsPerPage = 5 }) => {
                     breakLinkClassName="page-link"
                     pageCount={pageCount}
                     marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
+                    // pageRangeDisplayed={5}
                     onPageChange={handlePageClick}
                     containerClassName="pagination"
                     activeClassName="active"

@@ -16,7 +16,12 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row, Table } from "react-bootstrap";
 import styles from "./Cauhinhhocky.module.scss";
 import ReactPaginate from "react-paginate";
-
+import Select from "react-select";
+const options = [
+  { value: "2011-2012", label: "Nhận xét về môn học" },
+  { value: "2012-2013", label: "Nhận xét về năng lực" },
+  { value: "2013-2014", label: "Nhận xét về phẩm chất" },
+];
 const items = [
   {
     noidung: "	Trong giờ học tích cực phát biểu và giữ trật tự",
@@ -63,7 +68,6 @@ const items = [
     loaimau: "Nhận xét về năng lực",
     note: "",
   },
- 
 ];
 
 function Items({ currentItems }) {
@@ -78,7 +82,6 @@ function Items({ currentItems }) {
               <td>{item.loaimau}</td>
               <td>{item.note}</td>
 
-              
               <td colSpan={2}>
                 <Row>
                   <Col>
@@ -161,18 +164,20 @@ const Maunhanxet = ({ itemsPerPage = 5 }) => {
             <Col xs={1} className={`${styles.left}`}>
               <p> Loại nhận xét :</p>
             </Col>
-            <Col >
+            <Col>
               <div className={`${styles.trong}`}>
-                <select name="" id="" className={`${styles.kieu1}`}>
-                  <option value="">Nhận xét về môn học</option>
-                  <option value="">Nhận xét về năng lực</option>
-                  <option value="">Nhận xét về vật chất</option>
-                  <option value="">Nhận xét về phầm chất</option>
-                </select>
+                <Select
+                  isMulti
+                  name="colors"
+                  options={options}
+                //   className="basic-multi-select"
+                  classNamePrefix="select"
+                  placeholder="Chọn loại nhận xét"
+                  className={`${styles.kieu1}`}
+                />
               </div>
             </Col>
-           
-           
+
             <Col className={`${styles.filter}`}>
               <button className={`${styles.filter1}`}>
                 <FontAwesomeIcon icon={faFilter} />
@@ -224,7 +229,7 @@ const Maunhanxet = ({ itemsPerPage = 5 }) => {
         </div>
         <div className={`${styles.add}`}>
           <Row>
-            <Col >
+            <Col>
               <Button variant="success" className={`${styles.add1}`}>
                 <FontAwesomeIcon icon={faPlus} />
                 <span>Thêm mới</span>
@@ -243,13 +248,12 @@ const Maunhanxet = ({ itemsPerPage = 5 }) => {
 
                 <span>Nhập từ tệp</span>
               </Button>
-              
-                <button type="button" className={`${styles.add4}`}>
-                  <span className={`${styles.button1}`}>Chọn tệp</span>
-                  <input type="file" className={`${styles.input}`} />
-                  <span>Vui lòng chọn tệp</span>
-                </button>
-             
+
+              <button type="button" className={`${styles.add4}`}>
+                <span className={`${styles.button1}`}>Chọn tệp</span>
+                <input type="file" className={`${styles.input}`} />
+                <span>Vui lòng chọn tệp</span>
+              </button>
             </Col>
             <Col xs={3} className={`${styles.row1}`}>
               <Row>

@@ -12,7 +12,12 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row, Table } from "react-bootstrap";
 import styles from "./Cauhinhhocky.module.scss";
 import ReactPaginate from "react-paginate";
-
+import Select from "react-select";
+const options = [
+  { value: '2011-2012', label: '2011-2012' },
+  { value: '2012-2013', label: '2012-2013' },
+  { value: '2013-2014', label: '2013-2014' }
+]
 const items = [
   { schoolYear: "2015-2016", yearNegins: "2015", finalYear: "2016", note: "" },
   { schoolYear: "2015-2017", yearNegins: "2015", finalYear: "2016", note: "" },
@@ -125,12 +130,7 @@ const Cauhinhhocky = ({ itemsPerPage = 5 }) => {
             </Col>
             <Col>
               <div className={`${styles.trong}`}>
-                <select name="" id="" className={`${styles.kieu}`}>
-                  <option value="">2010-2011</option>
-                  <option value="">2012-2013</option>
-                  <option value="">2014-2015</option>
-                  <option value="">2-16-2-17</option>
-                </select>
+              <Select options={options} className={`${styles.kieu}`} placeholder="Chọn năm học"/>
               </div>
             </Col>
           </Row>
