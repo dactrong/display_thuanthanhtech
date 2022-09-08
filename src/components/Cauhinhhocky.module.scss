@@ -53,15 +53,10 @@
     .khoi {
       background: none;
       width: 200px;
-      padding: 5px 5px;
       border-radius: 5px;
-      margin-left: 10px;
-
-      .option {
-        &:hover {
-          background-color: red;
-        }
-      }
+      margin-left: 50px;
+      text-align: left;
+     
     }
     .trong {
       text-align: left;
@@ -69,16 +64,16 @@
    
     .left {
       text-align: right;
+      padding-top: 10px;
     }
     .kieu {
-      width: 100px;
-      padding: 5px 10px;
+      width: 140px;
       margin-bottom: 10px;
       border-radius: 5px;
     }
     .kieu1{
         border-radius: 5px;
-        width: 250px;
+        width: 350px;
         padding: 5px 10px;
       margin-bottom: 10px;
     }
@@ -184,10 +179,18 @@
   }
   // Cấu hinhg trường học
   .form {
-    padding: 10px 30px;
+    padding: 1px 30px;
     text-align: left;
     line-height: 30px;
-
+    .abc{
+      font-size: 12px;
+      padding: 12px;
+      // background-color: red;
+    }
+    .abcd{
+      font-size: 15px;
+margin: 100px;      // background-color: red;
+    }
     .image {
       position: absolute;
       width: 300px;
@@ -224,6 +227,7 @@
       text-align: center;
       color: white;
     }
+    
   }
   .button5 {
     background-color: rgb(244, 241, 241);
@@ -235,4 +239,6 @@
         margin-right: 10px;
       }
   }
+  
+  
 }
