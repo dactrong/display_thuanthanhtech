@@ -19,6 +19,7 @@ function App() {
       <Cauhinhkhoi itemsPerPage={5}/>
       <Phanphoimonhoc itemsPerPage={5}/>
       <Cauhinhtruonghoc/>
+      
       <Maunhanxet itemsPerPage={5}/>
     </div>
   );
